@@ -1,0 +1,27 @@
+@(orders: Seq[Order])
+<div>
+    <table>
+        <tr>
+			<th align="left">Number</th>
+			<th align="left">Sign</th>
+            <th align="left">Name</th>
+            <th align="left">Quantity</th>
+			<th align="left">Status</th>
+        </tr>
+        @for(order <- orders){
+		<tr>
+			<td>@order.number</td>
+			<td>@order.sign</td>
+			<td>@order.name</td>
+			<td>@order.quantity</td>
+			<td>@order.status</td>
+			<td><a href="/updateorder/@order.number"><button>Edit</button></a></td>
+			<td><a href="/deleteorder/@order.number"><button>Delete</button></a></td>
+		</tr>
+        }
+    </table>
+</div>
+<div id="menu">
+    <a href="/"><button>Home</button></a>
+    <a href="/addorder"><button>Add Order</button></a>
+</div>

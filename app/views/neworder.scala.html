@@ -1,0 +1,11 @@
+@(order: Order)
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<title>Title</title>
+	</head>
+	<body>A new order was added:<br>@order.number, @order.sign, @order.name, @order.quantity<br>
+		<a href="@routes.Application.listorders()"><button>Continue</button></a>
+	</body>
+</html>

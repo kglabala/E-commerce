@@ -1,0 +1,38 @@
+@(products: Seq[Product], users: Seq[User])
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<title>Title</title>
+	</head>
+	<body>
+		<table>
+			<tr>
+				@helper.form(action=routes.Application.newbasket){
+				<input id="number" type="text" name="number" tabindex="1" style="display: none;" />
+				<label>Sign
+					<select type="text" name="sign" tabindex="2" required="required" />
+					@for(user <- users) {
+					<option>@user.sign</option>
+					}
+					</select>
+				</label>
+				<label>Name
+					<select type="text" name="name" tabindex="3" required="required" >
+					@for(product <- products) {
+						<option>@product.name</option>
+					}
+					</select>
+				</label>
+				<label>Quantity
+					<input type="text" name="quantity" tabindex="4" required="required" >
+				</label>
+				<input type="text" name="status" tabindex="5" value="1" style="display: none;" />
+				<input type="submit" value="Add" type="button" >
+				}
+				@helper.form(action=routes.Application.listbaskets){
+				<input type="submit" value="Cancel" type="button" style="margin-left: 4px;" />
+				}
+			</tr>
+		</table>
+	</body>
+</html>

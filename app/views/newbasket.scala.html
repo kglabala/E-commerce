@@ -1,0 +1,11 @@
+@(basket: Basket)
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<title>Title</title>
+	</head>
+	<body>A new basket was added:<br>@basket.sign, @basket.name, @basket.quantity<br>
+		<a href="@routes.Application.listbaskets()"><button>Continue</button></a>
+	</body>
+</html>

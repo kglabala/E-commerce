@@ -1,0 +1,11 @@
+@(product: Product)
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<title>Title</title>
+	</head>
+	<body>A new product was added:<br>@product.name, @product.description, @product.price<br>
+		<a href="@routes.Application.listproducts()"><button>Continue</button></a>
+	</body>
+</html>

@@ -1,0 +1,23 @@
+@(products: Seq[Product])
+<div>
+    <table>
+        <tr>
+            <th align="left">Name</th>
+            <th align="left">Description</th>
+            <th align="left">Price</th>
+        </tr>
+        @for(product <- products){
+            <tr>
+                <td>@product.name</td>
+                <td>@product.description</td>
+                <td>@product.price</td>
+                <td><a href="/updateproduct/@product.name"><button>Edit</button></a></td>
+                <td><a href="/deleteproduct/@product.name"><button>Delete</button></a></td>
+            </tr>
+        }
+    </table>
+</div>
+<div id="menu">
+    <a href="/"><button>Home</button></a>
+    <a href="/addproduct"><button>Add Product</button></a>
+</div>

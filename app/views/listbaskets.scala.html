@@ -1,0 +1,23 @@
+@(baskets: Seq[Basket])
+<div>
+    <table>
+        <tr>
+			<th align="left">Sign</th>
+            <th align="left">Name</th>
+            <th align="left">Quantity</th>
+        </tr>
+        @for(basket <- baskets){
+		<tr>
+			<td>@basket.sign</td>
+			<td>@basket.name</td>
+			<td>@basket.quantity</td>
+			<td><a href="/updatebasket/@basket.sign/basket.name"><button>Edit</button></a></td>
+			<td><a href="/deletebasket/@basket.sign/basket.name"><button>Delete</button></a></td>
+		</tr>
+        }
+    </table>
+</div>
+<div id="menu">
+    <a href="/"><button>Home</button></a>
+    <a href="/addbasket"><button>Add Basket</button></a>
+</div>

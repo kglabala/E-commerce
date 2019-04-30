@@ -1,0 +1,29 @@
+@(basket: Basket)
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<title>Title</title>
+	</head>
+	<body>
+		<table>
+			<tr>
+				@helper.form(action=routes.Application.applybasket){
+				<label>Name
+					<input type="text" name="sign" tabindex="1" required="required" value="@basket.sign" readonly/>
+				</label>
+				<label>Description
+					<input type="text" name="name" tabindex="2" required="required" value="@basket.name"/>
+				</label>
+				<label>Price
+					<input type="number" name="quantity" tabindex="3" required="required" value="@basket.quantity"/>
+				</label>
+				<input type="submit" value="Update" type="button"/>
+				}
+				@helper.form(action=routes.Application.listbaskets){
+				<input type="submit" value="Cancel" type="button" style="margin-left: 4px;"/>
+				}
+			</tr>
+		</table>
+	</body>
+</html>

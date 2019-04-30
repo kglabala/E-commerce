@@ -1,0 +1,32 @@
+@(user:	User)
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<title>Title</title>
+	</head>
+	<body>
+		<table>
+			<tr>
+				@helper.form(action=routes.Application.applyuser){
+				<label>Sign
+					<input type="text" name="sign" tabindex="1" required="required" value="@user.sign" readonly/>
+				</label>
+				<label>Password
+					<input type="text" name="password" tabindex="2" required="required" value="@user.password"/>
+				</label>
+				<label>Name
+					<input type="text" name="name" tabindex="3" required="required" value="@user.name"/>
+				</label>
+				<label>Family
+					<input type="text" name="family" tabindex="4" required="required" value="@user.family"/>
+				</label>
+				<input type="submit" value="Update" type="button"/>
+				}
+				@helper.form(action=routes.Application.listusers){
+				<input type="submit" value="Cancel" type="button" style="margin-left: 4px;"/>
+				}
+			</tr>
+		</table>
+	</body>
+</html>
